@@ -5,24 +5,9 @@
     <meta charset="UTF-8">
     <title>登录页面</title>
     <link rel="stylesheet" href="<?php echo base_url() ;?>public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/login.css">
 </head>
 <body>
-    <style>
-    .container,.container .login {
-        margin:0 auto;
-    }
-    .container h1{
-        text-align: center;
-    }
-    .container .login{
-        width:23%;
-    }
-    .error{
-        font-size: 12px;
-        color:red;
-    }
-    </style>
-
     <div class="container">
        <div class="jumbotron">
             <h1>欢迎登陆</h1>
@@ -34,11 +19,9 @@
                     <input type="password" class="form-control"  name="password" value="" size="50" />
                     <span>
                     <span class="error">
-                        <?php 
-                            if (isset($mess) && $mess!='') {
-                                echo $mess;
-                            }
-                        ?>
+                    <?php if (isset($mess) && $mess!=''): ?>
+                        <?php echo $mess; ?>
+                    <?php endif ?>
                     </span>
                     </span>
                     <label for=""><input type="submit" class="btn btn-default" value="Submit" /></label>

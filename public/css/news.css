@@ -1,0 +1,49 @@
+ .main{
+        margin:0 10%;
+        word-break: break-all; word-wrap:break-word;
+    }
+    .content{
+        background-color: #fff;
+        width: 80%;
+        padding: 12px;
+    }
+    .message_content,.content{
+        margin: 0 auto;
+    }
+    .message_content{
+        box-sizing: border-box;
+        padding: 12px;
+        background-color: #FAF1F1;
+        width: 82%;
+    }
+    .commit{
+        position: relative;
+        bottom: 10px;
+        display: block;
+        padding: 12px;
+    }
+    .message_form,.commit{
+        width: 83%;
+        margin:0 auto;
+    }
+    .commit .user{
+        
+        font-size: 1.5em;
+    }
+    .commit .commit_tag{
+        position: absolute;
+        right: 0;
+        top: 80%;
+    }
+   
+    .message_form input,.message_form textarea{
+        border:2px solid #fff;
+        width:100%;
+        display: table-cell;
+        margin-top: 20px;
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+    .message_form textarea{
+        width:99.4%;
+    }

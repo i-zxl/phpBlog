@@ -1,0 +1,13 @@
+.container,.container .login {
+        margin:0 auto;
+    }
+    .container h1{
+        text-align: center;
+    }
+    .container .login{
+        width:23%;
+    }
+    .error{
+        font-size: 12px;
+        color:red;
+    }

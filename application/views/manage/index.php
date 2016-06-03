@@ -2,87 +2,7 @@
  <?php $url = base_url()."public/bootstrap/";?>
 <script src="<?php echo $url; ?>js/jquery.js"></script>
 <script src="<?php echo $url; ?>js/bootstrap.min.js"></script>
-<style type="text/css">
-    /* Custom Styles */
-    .container{
-        width:60%;
-        margin:0 auto;
-    }
-    .row ul.nav-tabs{
-        width: 120px;
-        margin-top: 20px;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-        font-size:0.8em;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
-    }
-    .row ul.nav-tabs li{
-        margin: 0;
-        border-top: 1px solid #ddd;
-    }
-    .row ul.nav-tabs li:first-child{
-        border-top: none;
-    }
-    .row ul.nav-tabs li a{
-        margin: 0;
-        padding: 8px 16px;
-        border-radius: 0;
-    }
-    .row ul.nav-tabs li.active a,.row ul.nav-tabs li.active a:hover{
-        color: #fff;
-        background: #0088cc;
-        border: 1px solid #0088cc;
-    }
-    .row ul.nav-tabs li:first-child a{
-        border-radius: 4px 4px 0 0;
-    }
-    .row ul.nav-tabs li:last-child a{
-        border-radius: 0 0 4px 4px;
-    }
-    .row ul.nav-tabs.affix{
-        top: 30px; /* Set the top position of pinned element */
-    }
-    .col-xs-3,.jumbotron{
-        margin-left:-20%;
-        margin-right: 20px;
-    }
-    .jumbotron{
-        text-align: right;
-    }
-    .jumbotron h1{
-        font-size: 16px;
-    }
-    .col-xs-3{
-        float:left;
-    }
-    .col-xs-9 h2,.col-xs-9 p{
-        margin:0 0 10px 8%;
-    }
-    .oprate ,.label{
-        margin: 0 20px;
-        float:right;
-    }
-    .label-default{
-        margin-right: 30px;
-    }
-    .menes ul li {
-        margin-right: 30px;
-        display: inline;
-    }
-    .error_message{
-      float:right;
-      font-size:12px;
-      color:red;
-      margin-top: -125px;
-      margin-left: 50px
-    }
-    .error_message p{
-      margin-bottom: 25px;
-    }
-    .panel-body input{
-        right:20px;
-    }
-    </style>
+<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/manage-index.css">
 <div class="container">
     <div class="jumbotron">
         <h1>
@@ -107,8 +27,8 @@
                             <?php echo "<p><span class='label-default'>".$value['id']."</span>".$value['titile']."<a class='oprate' href='#'>删除</a><a href='#' class='oprate'>修改</a><span class='label label-default'>分类：".$value['keyword']."</span></p>"; ?>
     
                     <?php endforeach ?>
-                    <?php else: ?>
-                    <?php      echo '没有任何文章'; ?>                            
+            <?php else: ?>
+                <?php echo '没有任何文章'; ?>                            
             <?php endif ?>    
 
             <hr>
