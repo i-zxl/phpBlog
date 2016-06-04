@@ -4,17 +4,17 @@
     <div class="article_list">
         <!-- start 输出最近动态 -->
         <?php 
-         echo "<h1>".$title."</h1>";
+         // echo "<h1>".$title."</h1>";
          ?>
        <!-- start 逆序输出最近发布的文章-->
-       <?php if ($articles): ?>
-           <?php for($i=count($articles)-1; $i >=0 ; $i--): ?>
+       <!-- <?php if ($articles): ?> -->
+           <!-- <?php for($i=count($articles)-1; $i >=0 ; $i--): ?> -->
         
-           <li><a href="<?php echo site_url('Blog/get_one_article/'.$articles[$i]['id']); ?>">  
-            <?php echo $articles[$i]['titile'];?>
-             </a></li>
-            <?php endfor ?>
-        <?php endif ?>
+           <!-- <li><a href="<?php echo site_url('Blog/get_one_article/'.$articles[$i]['id']); ?>">   -->
+            <!-- <?php echo $articles[$i]['titile'];?> -->
+             <!-- </a></li> -->
+            <!-- <?php endfor ?> -->
+        <!-- <?php endif ?> -->
     </div> 
     
     <div class="content">
@@ -29,11 +29,12 @@
                             <div class='count_all'><?php echo $article['good']; ?></div>
                         </div>
                         <div class='entry-screenshot'>
-                            <img class='entry-screenshot-img' src="http://ac-mhke0kuv.clouddn.com/3e76a2518467866a3a6e.jpg?imageView/1/w/100/h/100/q/80/format/png" alt="">
+                            <img class='entry-screenshot-img' src="https://avatars1.githubusercontent.com/u/19705840?v=3&s=140" alt="">
                         </div>
                         <div class='entry-infor'>
                             <div class='entry-title'>
-                                <a href=""><?php echo $article['titile']; ?></a>
+                                <a href="<?php echo site_url('Blog/get_one_article/'.$article['id']); ?>">
+                                <?php echo $article['titile']; ?></a>
                             </div>
                             <div class='entry-tag'>
                                 <div class='entry-time tag'>发布时间:<?php echo $article['time']; ?></div>
@@ -58,7 +59,7 @@
         </ul>
     </div>
       <div class='related_links'>
-        <h1>相关链接</h1>
+        <!-- <h1>相关链接</h1>
         <ul>
             <li><a href="">github</a></li>
             <li><a href="">阮一峰博客</a></li>
@@ -66,7 +67,7 @@
             <li><a href="">图灵社区</a></li>
             <li><a href="">知乎</a></li>
             <li><a href="">实验楼</a></li>
-        </ul>
+        </ul> -->
     </div>
 </div>
 

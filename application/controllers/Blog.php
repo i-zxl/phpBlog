@@ -57,16 +57,19 @@ class Blog extends CI_Controller {
     public function get_one_article($slug)
     {
             //查询点击的新闻
-            $data['one_article'] = $this->Article->GetList($slug);
+            $message_reply = $this->Article->GetList($slug);
+            $data['one_article'] = $message_reply[0];
+
             //获取导航条
             $data['articles'] = $this->get_nav_li();
+
+            $data['all_keyword_article'] = $message_reply[1];
+
             //如果文章为空，返回404
             if (empty($data['one_article'])) {
                 show_404();
             }
-            //传送数据
-            $data['row'] = $data['one_article'];
-            
+        
             //加载视图模板
             $this->loadview('article/news',$data);
     }

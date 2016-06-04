@@ -49,7 +49,36 @@ class Article extends CI_Model
 
             $query = $this->db->query($sql);
 
-            return $query->result_array();
+            // var_dump($query->result_array());
+            
+            // // 获取当前文章下的所有评论
+            $one_message_query = "SELECT * FROM $this->messagetable WHERE Entries_id = $slug AND C_name_id = 0"; 
+            $message_result = $this->db->query($one_message_query);
+
+            $message_query_result = $message_result->result_array();
+
+            // var_dump($message_query_result);
+
+            if (empty($message_query_result) == FALSE) {
+                    // 如果有评论则获取每条评论下是否含有针对本条评论的回复
+                foreach ($message_query_result as $key => $value) {
+                        $cid = $value['C_id'];
+                        $centries = $value['Entries_id'];
+                        $reply_query = "SELECT * FROM $this->messagetable WHERE C_name_id = $cid AND Entries_id = $centries";
+
+                        $reply_result = $this ->db ->query($reply_query);
+
+                        $reply_query_result = $reply_result->result_array();
+                        // if ($reply_query_result) {
+                            $message_query_result[$key]['mess'] = $reply_query_result;
+                        // }
+
+                }
+            }
+            // $result['0'] = $query->result_array();
+            // $result[]
+            $result = array('0' =>$query->result_array(),'1' => $message_query_result);
+            return $result;
         }
     }
     // 获取关键词的文章，参数为查询分类
@@ -100,11 +129,11 @@ class Article extends CI_Model
                 $message_result = $this->db->query($message_query);
 
                 $message_query_result = $message_result->result_array();
-                // var_dump($message_query_result);
                 // 判断是否有评论
                 if (empty($message_query_result) == FALSE) {
                     // 如果有评论则获取每条评论下是否含有针对本条评论的回复
                     foreach ($message_query_result as $key => $value) {
+                        // var_dump($value);
                         $cid = $value['C_id'];
                         $centries = $value['Entries_id'];
                         $reply_query = "SELECT * FROM $this->messagetable WHERE C_name_id = $cid AND Entries_id = $centries";
@@ -120,6 +149,7 @@ class Article extends CI_Model
                 }
             }
             $returnresult = array('0' => $result,'1'=>$message_query_result);
+
             return $returnresult;
         }else{
             echo "not find";

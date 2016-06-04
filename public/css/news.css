@@ -3,39 +3,61 @@
         word-break: break-all; word-wrap:break-word;
     }
     .content{
+        box-sizing: border-box;
+        margin:0 auto;
         background-color: #fff;
-        width: 80%;
+        width: 90%;
         padding: 12px;
     }
-    .message_content,.content{
+    .message_box{
+        width:90%;
         margin: 0 auto;
+        border-top:1px solid #111;
     }
     .message_content{
-        box-sizing: border-box;
-        padding: 12px;
-        background-color: #FAF1F1;
-        width: 82%;
+        width:100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .message_content{
+        width: 100%;
     }
     .commit{
-        position: relative;
-        bottom: 10px;
-        display: block;
+        background: rgba(233, 179, 179, 0.3);
+        border-bottom:1px solid #111;
+        margin-bottom: 5px;
         padding: 12px;
+        display: block;
+        position: relative;
+
+        /*word-break: break-all; word-wrap:break-word;*/
+        word-spacing: initial;
+    }
+
+    .commit a{
+        color:black;
     }
     .message_form,.commit{
-        width: 83%;
+        width: 100%;
         margin:0 auto;
     }
     .commit .user{
-        
         font-size: 1.5em;
     }
     .commit .commit_tag{
         position: absolute;
         right: 0;
-        top: 80%;
+        bottom: -6%;
+        padding:12px 0px;
     }
-   
+    .commit_tag span{
+        margin-left:10px;
+    }
+    .reply{
+        margin-left: 30px;
+        width: 100%;
+        // margin:0 auto;
+    }
     .message_form input,.message_form textarea{
         border:2px solid #fff;
         width:100%;

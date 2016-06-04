@@ -9,7 +9,7 @@
             <?php endforeach ?>
         <?php endif ?>
     </div>
-    <div class='related_links'>
+   <!--  <div class='related_links'>
         <h1>相关链接</h1>
         <ul>
             <li><a href="">github</a></li>
@@ -19,7 +19,7 @@
             <li><a href="">知乎</a></li>
             <li><a href="">实验楼</a></li>
         </ul>
-    </div>
+    </div> -->
 
     <div class='main'>
         <div class="classifys">
